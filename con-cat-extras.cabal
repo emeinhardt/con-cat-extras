@@ -1,0 +1,55 @@
+cabal-version:         3.0
+name:                  con-cat-extras
+version:               0.1.0.0
+synopsis:              Scratchpad for the 'constrained-categories' package.
+description:           Scratchpad for the 'constrained-categories' package.
+license:               MIT
+license-file:          LICENSE
+author:                Eric Meinhardt
+maintainer:            ericmeinhardt@gmail.com
+copyright:             2024
+homepage:              https://github.com/emeinhardt/con-cat-extras
+bug-reports:           https://github.com/emeinhardt/con-cat-extras/issues
+category:              Data
+build-type:            Simple
+extra-doc-files:       CHANGELOG.md
+
+source-repository head
+  type:     git
+  location: https://github.com/emeinhardt/con-cat-extras/con-cat-extras.git
+
+common warnings
+  ghc-options:
+    -Wall -Wdefault -Wno-orphans -Wredundant-constraints -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat
+
+library
+  import:              warnings
+  default-language:    GHC2021
+  default-extensions:
+    UnicodeSyntax
+    NoImplicitPrelude
+  -- other-extensions:
+  hs-source-dirs:      src
+  exposed-modules:
+    Control.CCC
+    Control.Functor.Constrained.Extras
+  -- other-modules:
+  build-depends:
+      base                  >= 4.13.0.0 && <5.0
+    , base-unicode-symbols  ==0.2.*
+    -- , composition           ==1.0.*
+    -- , containers            >= 0.2.0.1  && <0.8
+    , constrained-categories
+    -- , ersatz                >= 0.5
+    -- , recursion-schemes     >= 5.2
+    -- , free                  >= 5.1
+    -- , comonad               >= 5.0
+    -- , data-fix
+    -- , transformers-compat
+    -- , transformers
+    , trivial-constraint
+    , singletons
+    , tagged
+    -- , mtl
+    -- , optics
+    , pretty-simple         ==4.1.*
